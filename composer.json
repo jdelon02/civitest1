@@ -3,25 +3,40 @@
     "description": "Install drops-8 with Composer on Pantheon.",
     "type": "project",
     "license": "MIT",
-    "repositories": [
+    "authors": [
         {
-            "type": "composer",
-            "url": "https://packages.drupal.org/8"
+            "name": "Jeremy DeLong",
+            "role": "Just Awesome"
         }
     ],
+    "repositories": {
+        "drupal": {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        },
+        "zetacomponents-mail": {
+            "type": "vcs",
+            "url": "https://github.com/civicrm/zetacomponents-mail.git"
+        }
+    },
     "require": {
         "php": ">=7.0.8",
-        "composer/installers": "^1.0.20",
-        "cweagans/composer-patches": "^1.0",
-        "drupal-composer/drupal-scaffold": "^2.0.1",
+        "civicrm/civicrm-drupal-8": "dev-master",
+        "composer/installers": "^1.2",
+        "cweagans/composer-patches": "^1.6.5",
+        "drupal-composer/drupal-scaffold": "^2.5",
         "drupal/config_direct_save": "^1.0",
         "drupal/config_installer": "^1.0",
-        "drupal/console": "^1",
+        "drupal/console": "^1.0.2",
         "drupal/core": "^8.6.15",
         "drush-ops/behat-drush-endpoint": "^9.3",
         "drush/drush": "~8.3",
+        "roundearth/civicrm-composer-plugin": "*",
         "pantheon-systems/quicksilver-pushback": "^2",
         "rvtraveller/qs-composer-installer": "^1.1",
+        "vlucas/phpdotenv": "^2.4",
+        "webflo/drupal-finder": "^1.0.0",
+        "webmozart/path-util": "^2.3",
         "webflo/drupal-core-strict": "^8.6.15",
         "zaporylie/composer-drupal-optimizations": "^1.0"
     },
@@ -45,7 +60,7 @@
     "conflict": {
             "drupal/drupal": "*"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "autoload": {
         "classmap": [
